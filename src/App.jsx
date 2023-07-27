@@ -19,7 +19,7 @@ const partidos_inicial = [
 
 const Bloque = ({ partidos, titulo, seleccionados, handleClickBloque, handleClickPartido }) => {
   return <>
-    <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" onClick={handleClickBloque}>
+    <div className="block p-6 mb-2 sm:mb-0 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" onClick={handleClickBloque}>
       <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
         {titulo}
       </h5>
@@ -186,8 +186,8 @@ function App() {
 
   return (
     <>
-      <h1>Pactómetro</h1>
-      <div className="grid grid-cols-3 grid-rows-1 gap-4">
+      <h1 className="mb-5">Pactómetro</h1>
+      <div className="sm:grid sm:grid-cols-3 sm:grid-rows-1 sm:gap-4">
         <Bloque partidos={afavor} titulo="A favor" seleccionados={seleccionados} handleClickBloque={(e) => handleClickBloque(e, 'afavor')} handleClickPartido={handleClickPartido} />
         <Bloque partidos={abstencion} titulo="Abstención" seleccionados={seleccionados} handleClickBloque={(e) => handleClickBloque(e, 'abstencion')} handleClickPartido={handleClickPartido} />
         <Bloque partidos={encontra} titulo="En contra" seleccionados={seleccionados} handleClickBloque={(e) => handleClickBloque(e, 'encontra')} handleClickPartido={handleClickPartido} />
@@ -197,7 +197,7 @@ function App() {
           return <Partido key={partido.nombre} partido={partido} seleccionado={seleccionados.includes(partido)} handleClickPartido={(e) => handleClickPartido(e, partido)} />
         })}
       </div>
-      <div className="partidos mt-2 p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" onClick={(e) => handleClickBloque(e, 'partidos')}>
+      <div className="partidos mt-2 p-2" onClick={(e) => handleClickBloque(e, 'partidos')}>
         <button type="button" onClick={handleCheck}>Comprobar</button>
         <button type="button" onClick={handleReset}>Reset</button>
       </div>
