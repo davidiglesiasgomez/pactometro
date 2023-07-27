@@ -59,6 +59,17 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  opacity: 0.05;
+  
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
