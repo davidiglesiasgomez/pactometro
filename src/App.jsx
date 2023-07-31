@@ -176,12 +176,12 @@ function App() {
       return
     } 
     if (afavor.reduce((acc, p) => acc + p.escaños, 0)>encontra.reduce((acc, p) => acc + p.escaños, 0)) {
-      setMessageModal('¡Más síes que noes! Se produce la elección del presidente en segunda ronda. ¡Felicidades!')
+      setMessageModal('¡Más síes que noes! Se produce la elección del presidente en segunda ronda por mayoría simple. ¡Felicidades!')
       setShowModal(true)
       confetti()
       return
     } 
-    setMessageModal('Los números no dan. Tienes 20 días para lograr otro pacto... o nos vamos a nuevas elecciones 😔')
+    setMessageModal('Los números no dan. Tienes 2 meses para lograr otro pacto... o nos vamos a nuevas elecciones 😔')
     setShowModal(true)
   }
 
