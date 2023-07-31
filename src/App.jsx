@@ -154,8 +154,13 @@ function App() {
     setSeleccionados([])
   }
 
-  const handleReset = () => {
-    console.log('handleReset')
+  const handleReset = (e) => {
+    e.stopPropagation()
+    setSeleccionados([])
+    setAfavor([])
+    setAbstencion([])
+    setEncontra([])
+    setPartidos(partidos_inicial)
   }
 
   const handleCheck = () => {
@@ -199,7 +204,7 @@ function App() {
       </div>
       <div className="partidos mt-2 p-2" onClick={(e) => handleClickBloque(e, 'partidos')}>
         <button type="button" onClick={handleCheck}>Comprobar</button>
-        <button type="button" onClick={handleReset}>Reset</button>
+        <button type="button" onClick={(e) => handleReset(e)}>Reset</button>
       </div>
       <Modal showModal={showModal} handleClose={handleClose} messageModal={messageModal} />
     </>
